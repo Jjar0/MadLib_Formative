@@ -75,7 +75,7 @@ def setup():
         totalLines = len(lines) # Input validiation for Index errors.
         if (chosenLine > totalLines):
             print (str(totalLines))
-            print ("there are " + (str(totalLines)) + " lines in the file") # Prevents player from entering line numbers that dont have data.
+            print ("There's " + (str(totalLines)) + " line(s) in the file") # Prevents player from entering line numbers that dont have data.
             setup() # This validation is lazy.
 
         else:
