@@ -143,16 +143,16 @@ def game(template):
 
 
 def stories(): 
-        
+    
     print ("When creating your story use,\n'#' to place an adjective,\n'@' for a verb,\n'&' for a noun.\nEnter 'ESC' to return the main menu.") 
     userStory = input ("\nplease enter your user story:\n>")
 
-    while userStory.find('#')==-1 or userStory.find('@')==-1 or userStory.find('&')==-1: # Validation for madlib markers, searches for markers and loops if not present.
-        print ("Please make sure you entered all 3 special characters!")
-        stories()
-
     if userStory == "ESC": # Exit to main
-        main()
+            main()
+
+    while userStory.find('#')==-1 or userStory.find('@')==-1 or userStory.find('&')==-1: # Validation for madlib markers, searches for markers and loops if not present.
+        print ("\nPlease make sure you entered all 3 special characters!")
+        stories()
 
     print ("\n" + userStory + "\n") # Shows player their own story after entering.
  
@@ -175,7 +175,7 @@ def stories():
         if saveChoice == "N":
             stories()
 
-    
+
 
 
 
