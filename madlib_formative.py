@@ -18,9 +18,12 @@ def main():
 
 def setup():
 
-    gameType = input ("Do you want to play with,\nA: Default stories,\nB: User created stories?\n[A/B]>") # Player chooses between using built in stroies or custom stories.
+    gameType = input ("Do you want to play with,\nA: Default stories,\nB: User created stories?\nC: Return to the main menu?\n[A/B/C]>") # Player chooses between using built in stroies or custom stories.
 
     print(gameType)
+
+    if gameType == "C":
+        main()
 
     if gameType == "A": 
         print ("using default stories.") # DEFAULT STORIES.
@@ -72,7 +75,7 @@ def setup():
         totalLines = len(lines) # Input validiation for Index errors.
         if (chosenLine > totalLines):
             print (str(totalLines))
-            print ("there are only " + (str(totalLines)) + " lines in the file") # Prevents player from entering line numbers that dont have data.
+            print ("there are " + (str(totalLines)) + " lines in the file") # Prevents player from entering line numbers that dont have data.
             setup() # This validation is lazy.
 
         else:
@@ -115,8 +118,6 @@ def game(template):
     for i in range(len(storyList)):
         if storyList[i] == "&":
             storyList[i] = (noun)
-
-    print (storyList)
 
     madLib = ""
 
