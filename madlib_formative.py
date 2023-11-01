@@ -7,10 +7,10 @@ def main():
     print (selection)
 
     if selection == "A":
-        print ("Select your gamemode!")
+        print ("\nSelect your gamemode!")
         setup()
     if selection == "B":
-        print ("Welcome to the story creator!")
+        print ("\nWelcome to the story creator!")
         stories()
     else:
         print ("Please make sure you choose either option A or B.")
@@ -26,13 +26,13 @@ def setup():
         main()
 
     if gameType == "A": 
-        print ("using default stories.") # DEFAULT STORIES.
+        print ("\nusing default stories.\n") # DEFAULT STORIES.
 
         default1 = ("I get # when I @ a &.")
         default2 = ("That was #, I've never seen anyone @ like that, destroyed the & though.")
         default3 = ("Thats one ugly &, we might need to @ it in a # kind of way.")
 
-        roulette = [default1,default2,default3] # Selects a stroy at random.
+        roulette = [default1,default2,default3] # Selects a story at random.
 
         template = random.choice(roulette)
 
@@ -45,7 +45,7 @@ def setup():
         game(storyList) # Calls the game function and carries the chosen story through.
                     
     if gameType == "B":
-        print ("Using custom stories.\n") # CUSTOM STORIES.
+        print ("\nUsing custom stories.\n") # CUSTOM STORIES.
 
         with open("templates.txt", "r",) as f: # Read and print txt file by line to display story options to player.
             for line in f:
@@ -92,7 +92,7 @@ def setup():
 
 def game(template):
 
-    print ("Lets play!")
+    print ("\nLets play!")
  
     adjective = input ("Please enter an Adjective.\n>")
     print (adjective)
@@ -128,9 +128,9 @@ def game(template):
     print ("\n")
     print (madLib + "\n") #printing madlib string!
 
-    epilogue = input ("Would you like to,\nA: Play again with new words,\nB: Choose a different story,\nC: Return to the menu.\n[A/B/C]>")
+    epilogue = ""
     while epilogue != "A" or epilogue != "B" or epilogue != "C": # Validated menu to return to different functions of the game.
-        print ("Please enter either A, B or C.")
+        print ("Would you like to,\nA: Play again with new words,\nB: Choose a different story,\nC: Return to the menu.")
         epilogue = input ("[A/B/C]>")
 
         if epilogue == "A":
@@ -156,22 +156,23 @@ def stories():
 
     print ("\n" + userStory + "\n") # Shows player their own story after entering.
  
-    saveChoice = input ("Do you wish to save this user story?\n[Y/N]>")
-    print (saveChoice)
+    #saveChoice = input ("Do you wish to save this user story?\n[Y/N]>")
+    #print (saveChoice)
+
+    saveChoice = ""
 
     while saveChoice != "Y" or saveChoice != "N":
-        saveChoice = input ("[Y/N]>")
+        saveChoice = input ("Would you like to save this story?\n[Y/N]>")
         print (saveChoice)
 
-
-        if saveChoice == "Y":                           # Player appends their story string to a newline in the txt.   
+        if saveChoice == "Y":   # Player appends their story string to a newline in the txt.   
             print ("This story has been saved.")
             templateFile = open('templates.txt', 'a')
             templateFile.write('\n' + userStory)
             templateFile.close()
             print ("Story saved to templates.txt")
             stories()
-            
+                
         if saveChoice == "N":
             stories()
 
