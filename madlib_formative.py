@@ -89,7 +89,6 @@ def setup():
         print ("Please make sure you choose either option A or B.")
         setup()    
 
-
 def game(template):
 
     print ("\nLets play!")
@@ -139,8 +138,6 @@ def game(template):
             setup()
         if epilogue == "C":
             main()
-        
-
 
 def stories(): 
     
@@ -175,10 +172,6 @@ def stories():
                 
         if saveChoice == "N":
             stories()
-
-
-
-
 
 print ("Welcome to the Mad-Lib word game!") 
 main()
