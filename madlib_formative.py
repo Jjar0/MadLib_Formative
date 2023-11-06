@@ -139,6 +139,8 @@ def game(template):
         if epilogue == "C":
             main()
 
+#Hi guys
+
 def stories(): 
     
     print ("When creating your story use,\n'#' to place an adjective,\n'@' for a verb,\n'&' for a noun.\nEnter 'ESC' to return the main menu.") 
